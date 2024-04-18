@@ -19,6 +19,8 @@ RUN apk -U upgrade \
     && kubectl version --client \
     && helm version
 
+RUN helm plugin install https://github.com/jkroepke/helm-secrets --version v4.6.0
+
 WORKDIR /config
 
 CMD bash
