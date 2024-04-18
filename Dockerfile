@@ -6,8 +6,8 @@ ARG HELM_VERSION
 ARG TARGETOS
 ARG TARGETARCH
 ARG YQ_VERSION
-ARG SOPS_VERSION=3.8.1
-ARG HELM_SECRETS_VERSION=4.6.0
+ARG SOPS_VERSION
+ARG HELM_SECRETS_VERSION
 
 RUN apk -U upgrade \
     && apk add --no-cache ca-certificates bash git openssh curl gettext jq \
