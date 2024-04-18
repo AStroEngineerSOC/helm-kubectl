@@ -20,9 +20,8 @@ RUN apk -U upgrade \
     && chmod g+rwx /config /root \
     && helm repo add "stable" "https://charts.helm.sh/stable" --force-update \
     && kubectl version --client \
-    && helm version
-
-RUN helm plugin install https://github.com/jkroepke/helm-secrets --version v${HELM_SECRETS_VERSION}
+    && helm version \
+    && helm plugin install https://github.com/jkroepke/helm-secrets --version v${HELM_SECRETS_VERSION}
 
 WORKDIR /config
 

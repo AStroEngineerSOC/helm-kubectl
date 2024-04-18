@@ -75,5 +75,7 @@ jobs:
             KUBE_VERSION=${{ env.KUBE_VERSION }}
             HELM_VERSION=${{ env.HELM_VERSION }}
             YQ_VERSION=${{ env.YQ_VERSION }}
+            SOPS_VERSION=${{ env.SOPS_VERSION }}
+            HELM_SECRETS_VERSION=${{ env.HELM_SECRETS_VERSION }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
