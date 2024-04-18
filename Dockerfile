@@ -10,7 +10,7 @@ ARG SOPS_VERSION
 ARG HELM_SECRETS_VERSION
 
 RUN apk -U upgrade \
-    && apk add --no-cache ca-certificates bash git openssh curl gettext jq \
+    && apk add --no-cache ca-certificates bash git openssh curl gettext jq grep awk \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/v${KUBE_VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl -O /usr/local/bin/kubectl \
     && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz -O - | tar -xzO ${TARGETOS}-${TARGETARCH}/helm > /usr/local/bin/helm \
     && wget -q https://github.com/getsops/sops/releases/download/v${SOPS_VERSION}/sops-v${SOPS_VERSION}.${TARGETOS}.${TARGETARCH} -O /usr/local/bin/sops \
